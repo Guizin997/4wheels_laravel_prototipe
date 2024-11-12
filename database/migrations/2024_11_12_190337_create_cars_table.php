@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('car_model');
             $table->float('car_odometer'); //hodômetro: o medidor de kilometragem presente no painel dos carros
-            $table->year('car_fabrication');
-            $table->string('car_model');
+            $table->year('car_fabrication_year');
+            $table->string('car_fabricator');
             $table->timestamps();
         });
     }
