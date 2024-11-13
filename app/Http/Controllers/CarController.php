@@ -3,15 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Car;
 
 class CarController extends Controller
 {
+    
+    public readonly Car $car;
+    public function __construct() {
+        $this->car = new Car();
+    }
+    
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $cars = $this->car->All();
+        return view('cars', ['cars'=>$cars]);
     }
 
     /**
