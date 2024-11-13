@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/cars', [CarController::class,  'index'])->name('cars.index');
+
 require __DIR__.'/auth.php';
+
+
+
+
+
+
+
+
+
+
 
 // https://kopi.dev/best-tailwind-css-admin-template/
 
